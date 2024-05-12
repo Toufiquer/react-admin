@@ -12,6 +12,7 @@ import {
   LoadingIndicator,
 } from "react-admin";
 import { globalStyle } from "./style";
+import { Box, Typography } from "@mui/material";
 const DashboardAppBar = () => {
   return (
     <AppBar
@@ -23,7 +24,12 @@ const DashboardAppBar = () => {
           <LoadingIndicator />
         </>
       }
-    />
+    >
+      <Typography fontSize={22} fontWeight={"bold"}>
+        MealNight
+      </Typography>
+      <Box flex="1" />
+    </AppBar>
   );
 };
 export default DashboardAppBar;
