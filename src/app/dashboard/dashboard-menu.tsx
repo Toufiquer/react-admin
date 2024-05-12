@@ -26,13 +26,15 @@ const DashboardMenu = () => {
             textDecoration: "underline",
           }, // Dashboard Menu Text
         "&.RaMenu-open": {
-          ...globalStyle.background_color,
+          ...globalStyle.background_light,
           ...globalStyle.text_color,
+          minHeight: "100%",
         },
 
         "&.RaMenu-close": {
-          ...globalStyle.background_color,
+          ...globalStyle.background_light,
           ...globalStyle.text_color,
+          minHeight: "100%",
         },
       }}
     >

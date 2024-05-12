@@ -14,32 +14,35 @@ import DashboardLayout from "./dashboard-layout";
 
  const Page = () => {
    return (
-     <Admin
-       dataProvider={dataProvider}
-       defaultTheme="dark"
-       layout={DashboardLayout}
-     >
-       <Resource
-         icon={PeopleAltIcon}
-         name="users"
-         list={CustomList}
-         edit={EditGuesser}
-         recordRepresentation="name"
-       />
-       <Resource
-         icon={PostAddIcon}
-         name="posts"
-         list={ListGuesser}
-         edit={EditGuesser}
-         recordRepresentation="title"
-       />
-       <Resource
-         icon={InsertCommentIcon}
-         name="comments"
-         list={ListGuesser}
-         edit={EditGuesser}
-       />
-     </Admin>
+     <div className="min-h-screen">
+       <Admin dataProvider={dataProvider} layout={DashboardLayout}>
+         <Resource
+           icon={PeopleAltIcon}
+           name="users"
+           list={CustomList}
+           edit={EditGuesser}
+           recordRepresentation="name"
+         />
+         <Resource
+           icon={PostAddIcon}
+           name="posts"
+           list={ListGuesser}
+           edit={EditGuesser}
+           recordRepresentation="title"
+         />
+         <Resource
+           icon={InsertCommentIcon}
+           name="comments"
+           list={ListGuesser}
+           edit={EditGuesser}
+         />
+       </Admin>
+       <div className="bg-[#141A28] pt-12">
+         <footer className="text-sm py-4 text-center w-full text-slate-200  border-t border-slate-700">
+           All right reserved &copy; {new Date().getFullYear()}
+         </footer>
+       </div>
+     </div>
    );
  };
 

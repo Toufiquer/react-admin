@@ -16,7 +16,7 @@ import { Box, Typography } from "@mui/material";
 const DashboardAppBar = () => {
   return (
     <AppBar
-      sx={{ ...globalStyle.background_color, ...globalStyle.text_color }}
+      sx={{ ...globalStyle.background_dark, ...globalStyle.text_color }}
       toolbar={
         <>
           <LocalesMenuButton />

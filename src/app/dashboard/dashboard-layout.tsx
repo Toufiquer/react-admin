@@ -19,15 +19,15 @@ const DashboardLayout = (props) => (
     menu={DashboardMenu}
     sx={{
       "& .RaLayout-appFrame": {
-        ...globalStyle.background_color,
+        ...globalStyle.background_dark,
         ...globalStyle.text_color,
       },
       "& .RaLayout-contentWithSidebar": {
-        ...globalStyle.background_color,
+        ...globalStyle.background_dark,
         ...globalStyle.text_color,
       },
       "& .RaLayout-content": {
-        ...globalStyle.background_color,
+        ...globalStyle.background_dark,
         ...globalStyle.text_color,
       },
     }}
