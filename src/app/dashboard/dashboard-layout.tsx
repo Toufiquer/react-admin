@@ -9,5 +9,28 @@
 import { Layout } from "react-admin";
 import DashboardMenu from "./dashboard-menu";
 
-const DashboardLayout = (props) => <Layout {...props} menu={DashboardMenu} />;
+import { globalStyle } from "./style";
+import DashboardAppBar from "./dashboard-app-bar";
+
+const DashboardLayout = (props) => (
+  <Layout
+    appBar={DashboardAppBar}
+    {...props}
+    menu={DashboardMenu}
+    sx={{
+      "& .RaLayout-appFrame": {
+        ...globalStyle.background_color,
+        ...globalStyle.text_color,
+      },
+      "& .RaLayout-contentWithSidebar": {
+        ...globalStyle.background_color,
+        ...globalStyle.text_color,
+      },
+      "& .RaLayout-content": {
+        ...globalStyle.background_color,
+        ...globalStyle.text_color,
+      },
+    }}
+  />
+);
 export default DashboardLayout;
