@@ -6,7 +6,6 @@
 |-----------------------------------------
 */
 import { Menu } from "react-admin";
-import LabelIcon from "@mui/icons-material/Label";
 import { globalStyle } from "./style";
 
 const DashboardMenu = () => {
@@ -37,10 +36,9 @@ const DashboardMenu = () => {
         },
       }}
     >
-      <Menu.DashboardItem />
-      <Menu.ResourceItem sx={{}} name="posts" />
-      <Menu.ResourceItem sx={{}} name="comments" />
-      <Menu.ResourceItem sx={{}} name="users" />
+      <Menu.ResourceItem name="posts" />
+      <Menu.ResourceItem name="comments" />
+      <Menu.ResourceItem name="users" />
     </Menu>
   );
 };
