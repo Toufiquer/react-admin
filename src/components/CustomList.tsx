@@ -18,17 +18,20 @@ import {
 
 const CustomList = () => {
   return (
-    <List resource="users">
+    <List
+      resource="users"
+      sx={{ "& .RaLayout-contentWithSidebar": { backgroundColor: "black" } }}
+    >
       {/* <Datagrid> */}
-      <Datagrid sx={{ width: "100%" }} rowClick="show"> 
+      <Datagrid sx={{ width: "100%" }} rowClick="show">
         <TextField source="id" />
         <TextField source="name" />
         <TextField source="username" />
-        {/* <EmailField source="email" />
+        <EmailField source="email" />
         <TextField source="address.street" />
         <TextField source="phone" />
         <TextField source="website" />
-        <TextField source="company.name" /> */}
+        <TextField source="company.name" />
         <EditButton basePath="/" />
         <DeleteButton basePath="/" />
       </Datagrid>
