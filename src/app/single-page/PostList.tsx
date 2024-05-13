@@ -1,6 +1,6 @@
 /*
 |-----------------------------------------
-| setting up CustomList for the App
+| setting up PostList for the App
 | @author: Toufiquer Rahman<toufiquer.0@gmail.com>
 | @copyright: Toufiquer, May, 2024
 |-----------------------------------------
@@ -20,6 +20,7 @@ import {
   TextField,
   TextInput,
   Pagination,
+  ReferenceField,
 } from "react-admin";
 const PostPagination = () => (
   <Pagination
@@ -44,7 +45,7 @@ const postFilters = [
   <TextInput label="Title" source="title" defaultValue="Hello, World!" />,
 ];
 
-const CustomList = () => {
+const PostList = () => {
   return (
     <List
       pagination={<PostPagination />}
@@ -145,19 +146,12 @@ const CustomList = () => {
           },
         }}
       >
-        <TextField color={globalStyle.text_color_dark} source="id" />
-        <TextField source="name" color={globalStyle.text_color_dark} />
-        <TextField source="username" color={globalStyle.text_color_dark} />
-        <TextField source="email" color={globalStyle.text_color_dark} />
-        <TextField
-          source="address.street"
-          color={globalStyle.text_color_dark}
-        />
-        <TextField source="phone" color={globalStyle.text_color_dark} />
-        <TextField source="website" color={globalStyle.text_color_dark} />
-        <TextField source="company.name" color={globalStyle.text_color_dark} />
+        <TextField source="userId" color={globalStyle.text_color_dark} />
+        <TextField source="id" color={globalStyle.text_color_dark} />
+        <TextField source="title" color={globalStyle.text_color_dark} />
+        <TextField source="body" color={globalStyle.text_color_dark} />
       </Datagrid>
     </List>
   );
 };
-export default CustomList;
+export default PostList;

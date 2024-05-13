@@ -11,10 +11,12 @@ import { Admin, Resource, ListGuesser, EditGuesser } from "react-admin";
 import PostAddIcon from "@mui/icons-material/PostAdd";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import InsertCommentIcon from "@mui/icons-material/InsertComment";
-
-import CustomList from "./CustomList";
+ 
 import dataProvider from "./data-provider";
 import DashboardLayout from "./page-layout";
+import UserList from "./UserList";
+import PostList from "./PostList";
+import CommentList from "./CommentList";
 
 const Page = () => {
   return (
@@ -23,21 +25,21 @@ const Page = () => {
         <Resource
           icon={PeopleAltIcon}
           name="users"
-          list={CustomList}
+          list={UserList}
           edit={EditGuesser}
           recordRepresentation="name"
         />
         <Resource
           icon={PostAddIcon}
           name="posts"
-          list={ListGuesser}
+          list={PostList}
           edit={EditGuesser}
           recordRepresentation="title"
         />
         <Resource
           icon={InsertCommentIcon}
           name="comments"
-          list={ListGuesser}
+          list={CommentList}
           edit={EditGuesser}
         />
       </Admin>

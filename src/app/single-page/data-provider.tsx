@@ -45,14 +45,13 @@ const dataProvider = {
       _end: JSON.stringify((page - 1) * perPage + perPage),
       // filter: JSON.stringify(params.filter),
     };
-    const url = `${apiUrl}/${resource}?${queryString.stringify(query)}`;
-    console.log("query : ", query);
-    console.log("page : ", page, "  ", "perPage", perPage);
-    const { json, headers } = await httpClient(url);
     let totalCount = 0;
     await fetch(`${apiUrl}/${resource}`)
       .then((res) => res.json())
       .then((d) => (totalCount = d.length));
+    const url = `${apiUrl}/${resource}?${queryString.stringify(query)}`;
+    const { json, headers } = await httpClient(url);
+
     return {
       data: json,
       total: parseInt(

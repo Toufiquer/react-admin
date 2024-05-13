@@ -1,6 +1,6 @@
 /*
 |-----------------------------------------
-| setting up CustomList for the App
+| setting up UserList for the App
 | @author: Toufiquer Rahman<toufiquer.0@gmail.com>
 | @copyright: Toufiquer, May, 2024
 |-----------------------------------------
@@ -44,7 +44,7 @@ const postFilters = [
   <TextInput label="Title" source="title" defaultValue="Hello, World!" />,
 ];
 
-const CustomList = () => {
+const UserList = () => {
   return (
     <List
       pagination={<PostPagination />}
@@ -79,6 +79,8 @@ const CustomList = () => {
         },
         "svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.MuiPaginationItem-icon.css-tnzq9a-MuiSvgIcon-root-MuiPaginationItem-icon":
           { ...globalStyle.text_color }, // pagination style
+        ".MuiPaginationItem-root.MuiPaginationItem-sizeSmall.MuiPaginationItem-text.MuiPaginationItem-circular.MuiPaginationItem-ellipsis.css-1hfyor7-MuiPaginationItem-root":
+          { ...globalStyle.text_color }, // pagination style
         "button.MuiButtonBase-root.MuiPaginationItem-root.MuiPaginationItem-sizeSmall.MuiPaginationItem-text.MuiPaginationItem-circular.MuiPaginationItem-page.css-1ba2zw7-MuiButtonBase-root-MuiPaginationItem-root":
           { ...globalStyle.text_color }, // pagination style
         "button.MuiButtonBase-root.MuiPaginationItem-root.MuiPaginationItem-sizeSmall.MuiPaginationItem-text.MuiPaginationItem-circular.Mui-selected.MuiPaginationItem-page.css-1ba2zw7-MuiButtonBase-root-MuiPaginationItem-root":
@@ -86,8 +88,6 @@ const CustomList = () => {
             ...globalStyle.text_color,
             ...globalStyle.background_color_IndigoCent_dark,
           }, // pagination style
-        ".MuiPaginationItem-root.MuiPaginationItem-sizeSmall.MuiPaginationItem-text.MuiPaginationItem-circular.MuiPaginationItem-ellipsis.css-1hfyor7-MuiPaginationItem-root":
-          { ...globalStyle.text_color }, // pagination style
       }}
       actions={<ListActions />}
       filters={postFilters}
@@ -160,4 +160,4 @@ const CustomList = () => {
     </List>
   );
 };
-export default CustomList;
+export default UserList;
