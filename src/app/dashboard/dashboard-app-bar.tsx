@@ -13,6 +13,7 @@ import {
 } from "react-admin";
 import { globalStyle } from "./style";
 import { Box, Typography } from "@mui/material";
+import Link from "next/link";
 const DashboardAppBar = () => {
   return (
     <AppBar
@@ -25,9 +26,9 @@ const DashboardAppBar = () => {
         </>
       }
     >
-      <Typography fontSize={22} fontWeight={"bold"}>
+      <Link href="/" className="font-semibold text-stone-300">
         MealNight
-      </Typography>
+      </Link>
       <Box flex="1" />
     </AppBar>
   );

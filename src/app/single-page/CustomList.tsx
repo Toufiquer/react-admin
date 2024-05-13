@@ -23,7 +23,7 @@ import {
 } from "react-admin";
 const PostPagination = () => (
   <Pagination
-    rowsPerPageOptions={[10, 25, 50, 100]}
+    rowsPerPageOptions={[2, 5, 10, 25, 50, 100]}
     className={`bg-[#363B7B] text-slate-200 rounded-b-lg py-8`}
   />
 );
@@ -49,6 +49,7 @@ const CustomList = () => {
   console.log("resource : ", resource);
   return (
     <List
+      resource="users"
       pagination={<PostPagination />}
       sx={{
         "svg.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.MuiSelect-icon.MuiTablePagination-selectIcon.MuiSelect-iconStandard.css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon":
@@ -83,7 +84,6 @@ const CustomList = () => {
       actions={<ListActions />}
       filters={postFilters}
     >
-      <div>Title of the page</div>
       <Datagrid
         rowClick="show"
         sx={{

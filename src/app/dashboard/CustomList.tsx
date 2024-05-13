@@ -22,7 +22,7 @@ import {
 } from "react-admin";
 const PostPagination = () => (
   <Pagination
-    rowsPerPageOptions={[10, 25, 50, 100]}
+    rowsPerPageOptions={[2, 5, 10, 25, 50, 100]}
     className={`bg-[#363B7B] text-slate-200 rounded-b-lg py-8`}
   />
 );

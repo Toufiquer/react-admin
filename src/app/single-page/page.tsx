@@ -30,14 +30,14 @@ const Page = () => {
         <Resource
           icon={PostAddIcon}
           name="posts"
-          list={CustomList}
+          list={ListGuesser}
           edit={EditGuesser}
           recordRepresentation="title"
         />
         <Resource
           icon={InsertCommentIcon}
           name="comments"
-          list={CustomList}
+          list={ListGuesser}
           edit={EditGuesser}
         />
       </Admin>

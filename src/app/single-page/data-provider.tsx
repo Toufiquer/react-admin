@@ -4,9 +4,9 @@
 | @author: Toufiquer Rahman<toufiquer.0@gmail.com>
 | @copyright: Toufiquer, May, 2024
 |-----------------------------------------
-*/
-// import { stringify } from "query-string";
-import { fetchUtils } from "react-admin";
+*/ 
+import queryString from "query-string";
+import { fetchUtils, RaRecord } from "react-admin";
 
 const apiUrl = "https://jsonplaceholder.typicode.com";
 const httpClient = fetchUtils.fetchJson;
@@ -22,7 +22,7 @@ interface GetListParams {
   target?: any;
 }
 interface GetListResult {
-  data: any[];
+  data: RaRecord[];
   total?: number;
   // if using partial pagination
   pageInfo?: {
@@ -43,13 +43,18 @@ const dataProvider = {
       range: JSON.stringify([(page - 1) * perPage, page * perPage - 1]),
       filter: JSON.stringify(params.filter),
     };
-    const url = `${apiUrl}/${resource}?${JSON.stringify(query)}`;
+    const url = `${apiUrl}/${resource}?${queryString.stringify(query)}`;
     console.log("query : ", query);
     console.log("url : ", `${url}`);
     const { json, headers } = await httpClient(url);
+    console.log("headers : ", headers);
+    console.log("json : ", json);
     return {
       data: json,
-      total: parseInt(headers.get("content-range")?.split("/").pop() || "", 10),
+      total: parseInt(
+        headers.get("content-range")?.split("/").pop() || "10",
+        10
+      ),
     };
   },
 
