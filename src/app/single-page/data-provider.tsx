@@ -41,30 +41,24 @@ const dataProvider = {
     const query = {
       // sort: JSON.stringify([field, order]),
       // range: JSON.stringify([(page - 1) * perPage, page * perPage - 1]),
-      _start: JSON.stringify(page - 1),
-      _end: JSON.stringify(perPage),
+      _start: JSON.stringify((page - 1) * perPage),
+      _end: JSON.stringify((page - 1) * perPage + perPage),
       // filter: JSON.stringify(params.filter),
     };
-    const url = `${apiUrl}/${resource}?${queryString.stringify(query)}`; // default react-admin
-    const endPage = perPage;
-    const startPage = page;
-    // const url = `${apiUrl}/${resource}?_end=6&_order=ASC&_sort=id&_start=4`; // Json Placeholder working
-    // const url = `${apiUrl}/${resource}?_end=${startPage}&_order=ASC&_sort=id&_start=${endPage}`;
-    console.log("");
-    console.log("");
-    console.log("");
-    console.log("page : ", page);
-    console.log("perPage : ", perPage);
-    console.log("start id : ", startPage);
-    console.log("end id : ", endPage);
-    console.log("");
+    const url = `${apiUrl}/${resource}?${queryString.stringify(query)}`;
     console.log("query : ", query);
-    console.log("url : ", `${url}`);
+    console.log("page : ", page, "  ", "perPage", perPage);
     const { json, headers } = await httpClient(url);
+    let totalCount = 0;
+    await fetch(`${apiUrl}/${resource}`)
+      .then((res) => res.json())
+      .then((d) => (totalCount = d.length));
     return {
       data: json,
       total: parseInt(
-        headers.get("content-range")?.split("/").pop() || json.length || 1,
+        headers.get("content-range")?.split("/").pop() ||
+          `${totalCount}` ||
+          json.length,
         10
       ),
     };
